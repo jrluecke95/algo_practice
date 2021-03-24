@@ -1,20 +1,27 @@
-let array = [1, 0 , 3, 5, 4];
+// sorts through array comparing indices by pairs moving up the list
 
-let swapped = true;
-let tIndex = 0;
+let array = [1, 0, 3, 5, 4, 1, 7, 2, 4];
 
-while (swapped === true) {
-  tIndex = 0;
-  while (tIndex < array.length - 1) {
-    if (array[tIndex + 1] < array[tIndex]) {
-      let temp = array[tIndex + 1];
-      array[tIndex + 1] = array[tIndex];
-      array[tIndex] = temp;
-      swapped === true;
+function bubble_Sort(a) {
+  let swapp;
+  let n = a.length - 1;
+  let x = a;
+  do {
+    // sets swapp to false and will reamin if 'if' inside of for loop goes untouched 
+    swapp = false;
+    // checks each index and its neighboring element to see if swap is necesssary and if so it sets swapp to true sot hat loop will keep running
+    for (let i = 0; i < n; i++) {
+      // checks to see if index value to the right is less than left and swaps if so
+      if (x[i] > x[i + 1]) {
+        let temp = x[i];
+        x[i] = x[i + 1];
+        x[i + 1] = temp;
+        swapp = true;
+      }
     }
-    tIndex++;
-  }
-  swapped = false;
+    n--;
+  } while (swapp);
+  return x;
 }
 
-console.log(array)
+console.log(bubble_Sort(array));

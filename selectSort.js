@@ -1,4 +1,7 @@
-
+// loops through the array straight through and finds the smallest number in the array and places it in the array 
+// starting at 0 and then moving forward each index based on the most outer for loop
+// outer for loop keeps track of which index the number needs to be placed at
+// inner loop finds the lowerst number in the array
 
 function selectionSort(inputArr) {
   let n = inputArr.length;
